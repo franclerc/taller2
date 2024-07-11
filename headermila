@@ -1,0 +1,77 @@
+    <header>
+        <img class="logo" src="imagen/logo.png" alt="Logo de La Cosa Cine">
+        <nav>
+            <ul class="cont-nav">
+                <li><a href="#" class="activa">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn ">Noticias</a>
+                    <img src="imagen/icon-flecha.png" alt="">
+                    <div class="dropdown-content">
+                        <a href="#">Cine</a>
+                        <a href="#">TV</a>
+                        <a href="#">Comics</a>
+                        <a href="#">Videojuegos</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn ">Críticas</a>
+                    <img src="imagen/icon-flecha.png" alt="">
+                    <div class="dropdown-content">
+                        <a href="#">Rodaje</a>
+                        <a href="#">Trailers</a>
+                        <a href="#">Lanzamientos</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn ">Dossier</a>
+                    <img src="imagen/icon-flecha.png" alt="">
+                    <div class="dropdown-content">
+                        <a href="#">Marvel</a>
+                        <a href="#">Harry Potter</a>
+                        <a href="#">Star Wars</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn ">Entrevistas</a>
+                    <img src="imagen/icon-flecha.png" alt="">
+                    <div class="dropdown-content">
+                        <a href="#">Directores</a>
+                        <a href="#">Actores</a>
+                        <a href="#">Guionistas</a>
+                        <a href="#">Productores</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <ul class="nav-otros">
+            <li>
+                <div class="barra-buscar">
+                    <img src="imagen/icon-buscar.png" alt="">
+                    <input type="text" placeholder="Buscar en La Cosa Cine">
+                </div>
+            </li>
+            
+            <li>
+                <div class="lista-seguimiento">
+                    <a href="./form.html">
+                        <img src="imagen/icon-seguimiento.png" alt="" class="imagen-normal">
+                        <img src="imagen/icon-seguimiento-hover.png" alt="" class="imagen-hover">
+                        <p>Lista de seguimiento</p>
+                    </a>
+                </div>            
+            </li>                      
+                   
+            <li class="dropdown user-person">
+                <img src="imagen/icon-user.png" alt="" class="imagen-normal">
+                <img src="imagen/icon-user-hover.png" alt="" class="imagen-hover">
+                <a href="#" class="dropbtn">Lara</a>
+                <img src="imagen/icon-flecha.png" alt="">
+                <div class="dropdown-content">
+                    <a href="#">Mi perfil</a>
+                    <a href="#">Ajustes</a>
+                    <a href="#">Cerrar sesión</a>
+                </div>
+            </li>                        
+                       
+        </ul>
+    </header>
