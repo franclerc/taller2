@@ -1,0 +1,150 @@
+body {
+    background: radial-gradient(ellipse 50% 70% at 50% 50%, #4e15719f 0%, #4E1571 80%);
+    height: 100vh; /* Asegura que el fondo ocupe toda la pantalla */
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+
+/* 
+ENTRADA */
+
+.contenido{
+    display: flex;
+}
+
+.Puerta {
+    position: relative;
+    width: 80%;
+    margin-left: 5%;
+}
+
+.Puerta img {
+    width: 60%; 
+}
+
+.boton-redondo {
+    position: absolute; 
+    top: 75%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 80px; 
+    height: 80px; 
+    line-height: 100px;
+    background-color: #636363;
+    background: radial-gradient(circle, #C9C9C9 0%, #636363 80%); 
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 50%;
+    text-align: center; 
+    border: none;
+    cursor: pointer;
+    border: 10px solid #670030;
+   
+}
+
+.boton-redondo:hover{
+    background-color: rgba(240, 248, 255, 0.465);
+}
+
+
+/* TIPOGRAFIAS  */
+
+
+/* TITULO Y SUBTITULO */
+.shadows-into-light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.shadows-into-light-two-regular {
+    font-family: "Shadows Into Light Two", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+/* TEXTO */
+.amatic-sc-regular {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .amatic-sc-bold {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+
+/* SALON */
+
+
+.destacado {
+    display: inline-block;
+    width: 100px; 
+    height: 100px; 
+    line-height: 100px; /* Centra el texto verticalmente */
+    background-color: transparent; /* Sin relleno */
+    color: rgb(0, 0, 0);
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 50%; /* Hace el botón redondo */
+    text-align: center; /* Centra el texto horizontalmente */
+    border: 3px solid #670030; /* Borde con color negro y grosor de 3px */
+    cursor: pointer; 
+    font-size: 14px; /* Tamaño del texto */
+    position: absolute; /* Permite posicionar el botón en lugares específicos */
+}
+
+.destacado:nth-child(1) {
+    top: 20%; /* Posición vertical desde el top */
+    left: 45%; /* Posición horizontal desde el left */
+}
+
+.destacado:nth-child(2) {
+    top: 60%; /* Posición vertical desde el top */
+    left: 20%; /* Posición horizontal desde el left */
+}
+
+.destacado:nth-child(3) {
+    top:60%;
+    right: 25%; /* Posición horizontal desde el right */
+}
+
+
+
+/* VENTANA DE QUE SE VIERON TODAS LA OPCIONES */
+
+.dialogo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialogo-contenido {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.dialogo-contenido button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}

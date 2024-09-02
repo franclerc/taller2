@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon de musica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenido">
+        <a href="Piazarra.html" class="destacado">Pizarra</a>
+        <a href="Piano.html" class="destacado">Piano</a>
+        <a href="Xinofon.html" class="destacado">Xinofon</a>
+    </div>
+
+
+
+    <div id="fin-dialogo" class="dialogo" style="display: none;">
+        <div class="dialogo-contenido">
+            <p>¡Fin! Has terminado la clase.</p>
+            <button id="cerrar-dialogo">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+               // Verificar si se visitaron las tres páginas
+             if (localStorage.getItem('visitedPizarra') === 'true' && 
+            localStorage.getItem('visitedPiano') === 'true' && 
+            localStorage.getItem('visitedXinofon') === 'true') {
+            
+            // Mostrar la caja de diálogo personalizada
+            document.getElementById('fin-dialogo').style.display = 'flex';
+            
+            // Cerrar la caja de diálogo y redirigir a index.html al hacer clic en el botón
+            document.getElementById('cerrar-dialogo').addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+        }
+    </script>
+
+</body>
+</html>
