@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xilofon</title>
+    <link rel="stylesheet" href="xilofon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+       <!--  CARTEL -->
+       <div class="cartel">
+         <div class="titulo">
+           <a href="salon.html"><img src="img/X.png" alt="volver"></a>
+           <div class="borde montserrat-heading "><h1>Estadísticas de uso de IA en la industria musical</h1></div>
+          </div>
+          <p class="intro">Toca una tecla para saber el porcentaje...</p>
+
+
+          <div class="texto4">
+             <img class="colorr" src="img/imgroja.png" alt="imagen roja">
+             <p class="colorr montserrat-heading"> El 38% de los encuestados ya utiliza la IA en su trabajo musical <br>
+                y en la creación de contenido en general.</p>
+          </div>
+         
+
+          <div class="texto3">
+             <img class="colorn" src="img/imgnaranja.png" alt="imagen naranja">
+             <p class="colorn montserrat-heading">El 27% de los encuestados afirmó que hasta ese momento había <br>
+                rechazado el uso de la IA en sus procesos creativos.</p>
+          </div>
+        
+          <div class="texto2">
+             <img class="colora" src="img/imagenamarilla.png" alt="imagen amarillo">
+             <p class="colora montserrat-heading">Un 20% prefirió evitar por completo estas herramientas, <br> 
+                adoptando una postura cautelosa ante su potencial disruptivo.</p>
+          </div>
+        
+          <div class="texto1">
+             <img class="colorv" src="img/imgverde.png" alt="imagen verde">
+             <p class="colorv montserrat-heading">El 5% de los encuestados afirmó usar la IA de manera consistente, <br>
+                 este porcentaje muestra un crecimiento en la aceptación y exploración <br>
+                 de la inteligencia artificial en la industria.</p>
+          </div>
+
+      </div>
+      
+
+
+      <img id="gif-rojo" class="gif" src="img/palo.gif" alt="gif rojo">
+      <img id="gif-naranja" class="gif"  src="img/palo.gif" alt="gif naranja">
+      <img id="gif-amarillo" class="gif"  src="img/palo.gif" alt="gif amarillo">
+      <img id="gif-verde" class="gif" src="img/palo.gif" alt="gif verde">
+
+        <!-- XINOFON -->
+      <div class="xinofon-container">
+         <div class="barra-superior"></div>
+         <div class="xinofon">
+             <div class="key verde" id="key-v"></div>
+             <div class="key amarillo" id="key-a"></div>
+              <div class="key naranja" id="key-n"></div>
+              <div class="key rojo" id="key-r"></div>
+         </div>
+         <div class="barra-inferior"></div>
+         
+         <!-- Barras verticales que conectan la superior e inferior -->
+         <div class="base base-izquierda"></div>
+         <div class="base base-derecha"></div>
+      </div>
+    </main>
+
+
+
+    <!--  javascript -->
+
+    <script>
+        // Registrar la visita al núcleo 3
+        localStorage.setItem('visitedXinofon', 'true');
+
+        // Crear un objeto para hacer seguimiento de las teclas presionadas
+        let teclasPresionadas = {
+            rojo: false,
+            naranja: false,
+            amarillo: false,
+            verde: false
+        };
+
+        let alertaMostrada = false; // Para evitar mostrar la alerta varias veces
+        let tiempoIniciado = false; // Para controlar que el temporizador inicie una sola vez
+
+        // Obtener el párrafo intro
+        const introParagraph = document.querySelector('.intro');
+
+        // Función para reproducir sonido
+        function reproducirSonido(sonido) {
+            const audio = new Audio(sonido);
+            audio.play();
+        }
+
+        // Función para mostrar contenido relacionado con la tecla presionada
+        function mostrarContenido(clase, color) {
+            introParagraph.style.display = 'none'; // Ocultar el párrafo intro
+
+            // Ocultar todos los contenidos
+            document.querySelectorAll('.colorr, .colorn, .colora, .colorv').forEach(element => {
+                element.classList.remove('visible');
+            });
+
+            // Mostrar el contenido correspondiente a la clase pasada como argumento
+            document.querySelectorAll('.' + clase).forEach(element => {
+                element.classList.add('visible');
+            });
+
+            teclasPresionadas[color] = true; // Marcar la tecla como presionada
+
+            verificarTodasTeclas(); // Verificar si todas las teclas han sido presionadas
+        }
+
+        // Función para verificar si todas las teclas fueron presionadas
+        
+        function verificarTodasTeclas() {
+         if (teclasPresionadas.rojo && teclasPresionadas.naranja && teclasPresionadas.amarillo && teclasPresionadas.verde) {
+          if (!tiempoIniciado) {
+            tiempoIniciado = true;
+            setTimeout(() => {
+                // Redirige a comparacion.html sin mostrar una alerta
+                window.location.href = 'comparacion.html';
+            }, 5000); // Tiempo de espera antes de redirigir
+            }
+          }
+        }
+
+        // Asignar eventos de clic a cada tecla
+        document.getElementById('key-r').addEventListener('click', () => {
+            reproducirSonido('notas/fa.mp3');
+            mostrarContenido('colorr', 'rojo');
+        });
+
+        document.getElementById('key-n').addEventListener('click', () => {
+            reproducirSonido('notas/mi.mp3');
+            mostrarContenido('colorn', 'naranja');
+        });
+
+        document.getElementById('key-a').addEventListener('click', () => {
+            reproducirSonido('notas/re.mp3');
+            mostrarContenido('colora', 'amarillo');
+        });
+
+        document.getElementById('key-v').addEventListener('click', () => {
+            reproducirSonido('notas/do.mp3');
+            mostrarContenido('colorv', 'verde');
+        });
+
+
+
+        document.querySelectorAll('.key').forEach(key => {
+        key.addEventListener('click', function(event) {
+        const color = this.classList[1]; // Extrae el color (rojo, verde, etc.) de la clase
+        const gifId = `gif-${color}`;
+
+        // Oculta todos los GIFs antes de mostrar el correspondiente
+        document.querySelectorAll('.gif').forEach(gif => {
+            gif.style.display = 'none';
+        });
+
+        // Muestra el GIF en la posición del clic
+        const gif = document.getElementById(gifId);
+        if (gif) {
+            gif.style.display = 'block';
+            gif.style.left = `${event.pageX - (gif.offsetWidth / 4)}px`; // Posiciona horizontalmente
+            gif.style.top = `${event.pageY - (gif.offsetHeight / 2)}px`; // Posiciona verticalmente
+            
+            // Oculta el GIF después de 1 segundos
+            setTimeout(() => {
+                gif.style.display = 'none';
+            }, 900); // 2000 milisegundos = 1 segundos
+        } else {
+            console.error('El GIF no se encontró');
+        }
+    });
+   });
+        
+
+    </script>
+    
+</body>
+</html>

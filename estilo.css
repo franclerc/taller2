@@ -1,0 +1,304 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('image/fondo2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%; 
+    height: calc(100vw*(1117 / 1728));
+}
+
+h1, h3{
+    font-family: "Shadows Into Light", cursive;
+    font-size: 33px;
+}
+
+h4{
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    color: gray;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: "Amatic SC", sans-serif;
+    font-size: 28px;
+}
+
+main.contenedor {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 120vh;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.izquierdo, .derecho{
+    flex: 1;
+}
+
+.izquierdo{
+    padding: 10px;
+    height: 100hv;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contenedor-izquierdo{
+  text-align: center;
+}
+
+h1{
+margin-bottom: 10px;
+}
+
+h3{
+    margin-top: 0;
+    margin-bottom: 5px
+}
+
+.izquierdo img {
+    width: 87%;
+    margin-top: 5px;
+}
+
+.derecho {
+    width: 45%;
+    background-color: #040205;
+    padding: 50px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.contenedor-derecho{
+    text-align: center;
+}
+
+.arriba{
+    display: flex;
+}
+
+.notas{
+    margin-right: 30px;
+    width: 10%;
+    height: 20% ;
+}
+
+.boton-cancelar {
+    margin-top: 2px;
+    margin-left: 400px;
+    padding: 0;
+    border: none;
+    cursor: poiner;
+}
+
+.boton-cancelar img {
+    width: 80%;
+}
+
+.titulo-d{
+    font-family: "Inter", sans-serif;
+    color: white;
+    margin-bottom: 0;
+    font-size: 40px;
+}
+
+#subtitulo{
+   margin-top: 5px;
+   margin-bottom: 50px;
+}
+
+#instrumentButtons{
+    display: flex;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    margin-left: 5%;
+    font-size: 16px;
+    border: 2px solid gray;
+    background-color: #000;
+    color:white;
+    cursor: pointer;
+}
+
+.g, .tam , .tr {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+ 
+/* Nombres de los instrumentos */
+.N {      
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: gray;
+}
+
+button.selected {
+    border: 3px solid #61009E;
+    background-color: black;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+#generateButton {
+    width: 500px; 
+    background-color: #61009E;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    padding: 4%;
+    margin-left: 5%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#generateButton:disabled {
+    background-color: #555; /* Gris cuando está deshabilitado */
+    border: none;
+}
+
+#regenerateButton button {
+    width: 500px;
+    background-color: #000; 
+    color: white;
+    font-size: 24px;
+    border: 3px solid #61009E;
+    border-radius: 50px;
+    padding: 4%;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#gif {
+    width: 80%; 
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+  }
+  
+  .reproductor {
+    display: flex;
+    align-items: center;
+  }
+  
+  #albumArt {
+    margin-right: 20px;
+  }
+  
+  #albumImage {
+    margin-right: 60%;
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .info-contenedor {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .song-title {
+    font-family: "Inter", sans-serif; ;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .instrumentos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .instrumento {
+    border: 2px solid #636363;
+    color: #636363;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+  
+  .custom-audio-player {
+    display: flex;
+    align-items: center;
+  }
+  
+  button#playPauseButton {
+    background-color: #61009E;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button#playPauseButton:hover {
+    background-color: #410064;
+  }
+  
+  .progress-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .progress {
+    width: 50%; /* Esto puede ser dinámico */
+    height: 100%;
+    background-color: #61009E;
+    border-radius: 5px;
+  }
+  
+  #totalTime {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+  }
+
+  #generateButton, #regenerateButton {
+    transition: display 0.3s ease;
+  }
+  

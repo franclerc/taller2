@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <title>Pizarrón</title>
+
+</head>
+<body>
+
+ <main class="contenedor">
+  <section class="izquierdo">
+    <div class="contenedor-izquierdo">
+
+    <h1>¿Qué son los generadores de sonido IA?</h1>
+    <p>Los generadores de sonido IA son programas que pueden<br>
+        producir sonidos a partir de textos, imágenes, otros sonidos o <br>
+        cualquier otro tipo de dato. Utilizan técnicas de inteligencia <br>
+        artificial, especialmente redes neuronales, para aprender a <br>
+        generar sonidos naturales, realistas y creativos.</p>
+    <h3>¿Como funcionan? </h3>
+    <img src="./image/red.png" alt="red">
+</div>
+</section>
+
+<section class="derecho">
+ <div class="contenedor-derecho">
+     <div class="arriba">
+    <img src="./image/notas.png" alt="" class="notas">
+    <button type="button" class="boton-cancelar" onclick="irAPaginaInicio()"><img src="./image/cancelar.png" alt=""></button>
+   </div>
+        <h1 class="titulo-d" id="crearTitulo">¡CREA TU SONIDO!</h1>
+        <h4 id="subtitulo">Selecciona dos o más instrumentos...</h4>
+
+        <!-- "Momento de escuchar" -->
+       <h1 class="titulo-d" id="escucharTitulo" style="display: none;">¡ESCUCHA TU SONIDO!</h1>
+
+      <!-- selección de instrumentos -->
+      <div id="instrumentButtons">
+        <button id="guitarraButton" onclick="toggleInstrument('guitarra')">
+        <img src="./image/guitarra.png" alt="guitarra" class="g">
+        <p class="N">Guitarra
+        </button>
+      
+        <button id="tamborButton" onclick="toggleInstrument('tambor')">
+        <img src="./image/tambor.png" alt="tambor" class="tam">
+        <p class="N">Tambor</p>
+       </button>
+        <button id="trompetaButton" onclick="toggleInstrument('trompeta')">
+        <img src="./image/trompeta.png" alt="trompeta" class="tr">
+        <p class="N">Trompeta</p>
+      </button>
+      </div>
+
+     <!-- botón para generar la canción -->
+     <button id="generateButton" onclick="generateSong()" disabled>GENERAR</button>
+
+    <!-- reproducir la canción generada  -->
+   <div class="audio-player" style="display: none;">
+   <div class="reproductor">
+
+    <!-- imagen del álbum -->
+    <div id="albumArt">
+      <img id="albumImage" src="" alt="Album Art" />
+    </div>
+
+    <!-- reproductor de audio  -->
+    <div class="info-contenedor">
+      <h2 class="song-title">Nombre de la canción</h2>
+
+      <div class="instrumentos">
+        <span class="instrumento">Guitarra</span>
+        <span class="instrumento">Trompeta</span>
+        <span class="instrumento">Tambor</span>
+      </div>
+
+      <div class="custom-audio-player">
+        <button id="playPauseButton" onclick="togglePlayPause()">Play</button>
+
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+          <span id="totalTime">00:30 seg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- volver a generar la canción -->
+      <div id="regenerateButton" style="display: none;">
+        <button onclick="resetSelection()">GENERAR DE NUEVO</button>
+      </div>
+    </div>
+
+      <img src="./image/ondas.gif" alt="gif" id="gif">
+     </section>
+
+    </div>
+
+    <script src="pizarron.js"></script>
+
+</section>
+</main>
+<audio id="songPlayer" style="display:none;"></audio>
+</body>
+</html>
